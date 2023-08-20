@@ -3,7 +3,7 @@ import Slider from 'react-slick'
 const DealSlider = () => {
   const CartNav = [
     {
-        name:"Mobiles",
+        name:"Top Mirrorless Camreas",
         icon:"https://rukminim2.flixcart.com/image/200/200/printer/j/j/y/hp-laserjet-m1005-multifunction-original-imadxhzpeb9qbrfg.jpeg?q=70"
     },
     {
@@ -40,8 +40,7 @@ const DealSlider = () => {
     }
 ]
 const settings = {
-  dots: true,
-  infinite: true,
+
   speed: 500,
   slidesToShow: 2.5,
   slidesToScroll: 2.5
@@ -61,9 +60,13 @@ const settings = {
           {
             CartNav.map((el,i)=>(
                 <div key={i} className='text-center flex flex-col items-center gap-5 p-1'>
-                  <img src={el.icon} alt={el.name}  />
-                  <h6>{el.name}</h6>
-                  <span>RS : $%%%%</span>
+                  <img width={'200px'} src={el.icon} alt={el.name} className='mt-11'  />
+                  <div className="text-items flex flex-col gap-2">
+                  <div className=' font-semibold mt-11 text-sm tracking-normal'>{el.name}</div>
+                  <span>FROM $ 3999</span>
+                  <span  className='text-gray-400 '>Buy Now</span>
+
+                  </div>
                 </div>
             ))
           }
@@ -73,7 +76,7 @@ const settings = {
           <img width={"230px"} src="https://rukminim2.flixcart.com/fk-p-flap/464/708/image/8270b79992f45f9d.jpg?q=70" alt="banner" />
         </div>
       </div>
-    </section>
+    </section> 
   )
 }
 
