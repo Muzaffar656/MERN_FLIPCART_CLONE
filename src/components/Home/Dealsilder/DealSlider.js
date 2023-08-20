@@ -1,14 +1,5 @@
 import React from 'react'
 import Slider from 'react-slick'
-import fashion from '../../../assets/images/Categories/fashion.png';
-import electronics from '../../../assets/images/Categories/electronics.png';
-import home from '../../../assets/images/Categories/home.png';
-import travel from '../../../assets/images/Categories/travel.png';
-import appliances from '../../../assets/images/Categories/appliances.png';
-import furniture from '../../../assets/images/Categories/furniture.png';
-import beauty from '../../../assets/images/Categories/beauty.png';
-import grocery from '../../../assets/images/Categories/grocery.png';
-import mobiles from '../../../assets/images/Categories/phone.png'
 const DealSlider = () => {
   const CartNav = [
     {
