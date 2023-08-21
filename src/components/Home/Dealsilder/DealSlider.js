@@ -43,10 +43,9 @@ const settings = {
 
   speed: 500,
   slidesToShow: 2.5,
-  slidesToScroll: 2.5
-};
+  slidesToScroll: 2.5};
   return (
-    <section className='bg-white  overflow-hidden flex my-2 mx-2 '>
+    <section className='bg-white  overflow-hidden flex my-2 mx-2  '>
       <div className='flex justify-between w-full my-auto items-center'>
         <div style={{width:"230px"}} className='flex flex-col gap-5 items-center  width-widthX'>
           <h2 className='bg-white text-3xl text-center text-gray-700 mt-24 leading-10'>Best of <br /> Electronics</h2>
@@ -54,19 +53,20 @@ const settings = {
           <img src="	https://rukminim1.flixcart.com/fk-p-flap/278/278/image/7593e7b6640822c1.jpg?q=90" alt="banner" />
         </div>
         {/* slider container */}
-        <div className='w-72 grow '>
+        <div className='w-72 grow    ' >
       <Slider {...settings}>
 
           {
             CartNav.map((el,i)=>(
-                <div key={i} className='text-center flex flex-col items-center gap-5 p-1'>
-                  <img width={'200px'} src={el.icon} alt={el.name} className='mt-11'  />
-                  <div className="text-items flex flex-col gap-2">
-                  <div className=' font-semibold mt-11 text-sm tracking-normal'>{el.name}</div>
-                  <span>FROM $ 3999</span>
-                  <span  className='text-gray-400 '>Buy Now</span>
+                <div key={i} className='text-center flex flex-col items-center gap-5 '>
+                  <img  src={el.icon} alt={el.name} className=' p-4 m-auto max-w-full ' style={{height:"180px"}}   />
 
+                  <div className="text-items flex flex-col items-center gap-2 mb-6">
+                  <div className=' font-semibold mt-11 text-sm tracking-normal '>{el.name}</div>
+                  <span className='text-sm text-rs'>From $ 3999</span>
+                  <span  className='text-gray-400 text-xs '>Buy Now</span>
                   </div>
+
                 </div>
             ))
           }
