@@ -20,7 +20,7 @@ export const PreviousBtn = ({ className, onClick }) => {
 }
 export const NextBtn = ({ className, onClick }) => {
   return (
-    <div className={className} onClick={onClick}>
+    <div className={`${className } hidden`} onClick={onClick}>
       <ArrowForwardIosIcon />
     </div>
   )
@@ -37,17 +37,45 @@ const Banner = () => {
    slidesToScroll:1,
    prevArrow: <PreviousBtn />,
    nextArrow: <NextBtn />,
+   responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: false,
+        nextArrow: false,
+      }
+    }
+  ]
 
   }
 const banners = [gadgetSale,kitchenSale,poco,realme,fashionSale,oppo]
   return (
     <>
-    <section className='sm:h-72 overflow-hidden h-44 ' >
+    <section className='sm:h-72 overflow-hidden  ' >
 
       <Slider {...settings}>
   {
     banners.map((el,i)=>(
-      <img src={el} className='sm:h-72 w-full object-cover' alt="banner" key={i}/>
+      <img src={el} className='sm:h-72 w-full object-cover h-32' alt="banner" key={i}/>
     ))
   }
       

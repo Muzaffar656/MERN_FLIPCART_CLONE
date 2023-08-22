@@ -13,6 +13,7 @@
 .slick-prev {
     left: 0;
     border-radius: 0 5px 5px 0;
+    /* display: none; */
 }
 .slick-next {
     right: 0;
@@ -21,4 +22,15 @@
 .slick-prev::before,
 .slick-next::before {
     display: none;
+}
+
+
+@media (max-width:640px) {
+    .slick-arrow{
+    display: none;
+}
+.slick.prev{
+    display: none;
+}
+    
 }
