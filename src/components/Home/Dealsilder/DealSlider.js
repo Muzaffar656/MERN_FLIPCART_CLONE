@@ -1,5 +1,25 @@
 import React from 'react'
-import Slider from 'react-slick'
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import './DealSlider.css'
+export const PreviousBtn = ({ className, onClick }) => {
+  return (
+    <div className={className} onClick={onClick}>
+      <ArrowBackIosIcon />
+    </div>
+  )
+}
+
+export const NextBtn = ({ className, onClick }) => {
+  return (
+    <div className={className} onClick={onClick}>
+      <ArrowForwardIosIcon />
+    </div>
+  )
+}
 const DealSlider = () => {
   const CartNav = [
     {
@@ -39,11 +59,17 @@ const DealSlider = () => {
         icon:"https://rukminim2.flixcart.com/image/200/200/xif0q/smartwatch/k/h/s/1-83-38083pp01-android-ios-fastrack-yes-original-imagnhzeabmcfspe.jpeg?q=70"
     }
 ]
-const settings = {
 
+const settings = {
+  autoplay: true,
+  autoplaySpeed: 2000,
+  dots: false,
+  infinite: true,
   speed: 500,
   slidesToShow: 2.5,
-  slidesToScroll: 2.5};
+  slidesToScroll: 2.5,
+  prevArrow: <PreviousBtn />,
+    nextArrow: <NextBtn />,};
   return (
     <section className='bg-white  overflow-hidden flex my-2 mx-2  '>
       <div className='flex justify-between w-full my-auto items-center'>
@@ -66,7 +92,7 @@ const settings = {
                   <span className='text-sm text-rs'>From $ 3999</span>
                   <span  className='text-gray-400 text-xs '>Buy Now</span>
                   </div>
-
+           
                 </div>
             ))
           }
