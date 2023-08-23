@@ -22,3 +22,10 @@
 .slick-next::before {
     display: none;
 }
+
+@media (max-width:640px) {
+    .slick-arrow.slick-prev,
+.slick-arrow.slick-next{
+    display: none;
+}
+}

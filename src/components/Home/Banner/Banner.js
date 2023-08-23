@@ -11,16 +11,19 @@ import poco from '../../../assets/images/Banners/poco-m4-pro.webp';
 import realme from '../../../assets/images/Banners/realme-9-pro.webp';
 import fashionSale from '../../../assets/images/Banners/fashionsale.jpg';
 import oppo from '../../../assets/images/Banners/oppo-reno7.webp';
+
 export const PreviousBtn = ({ className, onClick }) => {
   return (
-    <div className={className} onClick={onClick}>
+    <div className={className}  onClick={onClick}>
       <ArrowBackIosIcon />
     </div>
   )
 }
 export const NextBtn = ({ className, onClick }) => {
   return (
-    <div className={`${className } hidden`} onClick={onClick}>
+    <div className={className } style={{
+ 
+    }}  onClick={onClick}>
       <ArrowForwardIosIcon />
     </div>
   )
@@ -28,49 +31,21 @@ export const NextBtn = ({ className, onClick }) => {
 const Banner = () => {
   
   const settings = {
-   autoplay:true,
-   dots:true,
-   autoplaySpeed:2000,
-   infinite:true,
-   speed :500,
-   slidesToShow:1,
-   slidesToScroll:1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
    prevArrow: <PreviousBtn />,
    nextArrow: <NextBtn />,
-   responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: true,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        initialSlide: 2
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        prevArrow: false,
-        nextArrow: false,
-      }
-    }
-  ]
-
+  
   }
 const banners = [gadgetSale,kitchenSale,poco,realme,fashionSale,oppo]
   return (
     <>
-    <section className='sm:h-72 overflow-hidden  ' >
+    <section className='sm:h-72 relative overflow-hidden  ' >
 
       <Slider {...settings}>
   {

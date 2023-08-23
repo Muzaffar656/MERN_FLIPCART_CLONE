@@ -9,6 +9,7 @@
     background: #fcfcfc;
     color: #000;
     z-index: 1;
+    display: none;
 }
 .slick-prev {
     left: 0;
@@ -25,12 +26,3 @@
 }
 
 
-@media (max-width:640px) {
-    .slick-arrow{
-    display: none;
-}
-.slick.prev{
-    display: none;
-}
-    
-}
