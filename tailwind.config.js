@@ -29,7 +29,8 @@ module.exports = {
         orange: '#fb641b',
         darkBlue: '#172337',
         grey: '#878787',
-        sunil:"#fff"
+        sunil:"#fff",
+        plus :"#ffe500"
       },
     },
     spacing: {
