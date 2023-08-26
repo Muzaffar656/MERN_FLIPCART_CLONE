@@ -59,6 +59,39 @@ const DealSlider = () => {
         icon:"https://rukminim2.flixcart.com/image/200/200/xif0q/smartwatch/k/h/s/1-83-38083pp01-android-ios-fastrack-yes-original-imagnhzeabmcfspe.jpeg?q=70"
     }
 ]
+const GridImages = [
+  
+    {
+    icon: "https://rukminim1.flixcart.com/fk-p-flap/250/334/image/75b98993a5312a3a.png?q=90",
+     
+    },
+    {
+      icon:"https://rukminim1.flixcart.com/fk-p-flap/250/334/image/b26bd43084464241.png?q=90"
+    },
+    {
+      icon:"https://rukminim1.flixcart.com/fk-p-flap/250/334/image/4c6c5b66ace4194b.png?q=90"
+    },
+    {
+      icon:"https://rukminim1.flixcart.com/fk-p-flap/250/266/image/836b520e10b5b3b5.png?q=90"
+    },
+    {
+      icon:"https://rukminim1.flixcart.com/fk-p-flap/250/334/image/3bd3e5eef3a4ea11.jpeg?q=90"
+    }
+    ,
+    {
+      icon:"https://rukminim1.flixcart.com/fk-p-flap/250/334/image/4ce8c9bdc5dfeff0.png?q=90"
+    },
+    {
+      icon:"https://rukminim1.flixcart.com/fk-p-flap/250/266/image/49918721e375205a.jpeg?q=90"
+    },
+    {
+      icon:"https://rukminim1.flixcart.com/fk-p-flap/250/266/image/2edcb735e06911ec.jpg?q=90"
+    },
+    {
+      icon:"https://rukminim1.flixcart.com/fk-p-flap/250/334/image/1e6abbaa21039788.png?q=90"
+    }
+
+]
 
 const settings = {
   autoplay: true,
@@ -72,14 +105,14 @@ const settings = {
     nextArrow: <NextBtn />,};
   return (
     <section className='bg-white  overflow-hidden flex my-2 mx-2  '>
-      <div className='flex justify-between w-full my-auto items-center'>
-        <div style={{width:"230px"}} className='flex flex-col gap-5 items-center  width-widthX'>
+      <div className='hidden sm:flex justify-between w-full my-auto items-center'>
+        <div style={{width:"230px"}} className='sm:flex hidden flex-col gap-5 items-center  width-widthX'>
           <h2 className='bg-white text-3xl text-center text-gray-700 mt-24 leading-10'>Best of <br /> Electronics</h2>
           <button className='bg-primary-blue text-white capitalize px-2 shadow py-2 rounded-sm'>View All</button>
           <img src="	https://rukminim1.flixcart.com/fk-p-flap/278/278/image/7593e7b6640822c1.jpg?q=90" alt="banner" />
         </div>
         {/* slider container */}
-        <div className='w-72 grow    ' >
+        <div className='slider-section w-72 grow   ' >
       <Slider {...settings}>
 
           {
@@ -98,9 +131,19 @@ const settings = {
           }
       </Slider>
         </div>
-        <div>
-          <img width={"230px"} src="https://rukminim2.flixcart.com/fk-p-flap/464/708/image/8270b79992f45f9d.jpg?q=70" alt="banner" />
+        <div className='sm:flex hidden '>
+          <img width={"230px"}  src="https://rukminim2.flixcart.com/fk-p-flap/464/708/image/8270b79992f45f9d.jpg?q=70" alt="banner" />
         </div>
+      </div>
+      {/* grid items for mobile phones */}
+      <div className='grid grid-cols-3 sm:hidden'>
+        {
+          GridImages.map((el,i)=>(
+            <div key={i} >
+              <img src={el.icon} className='h-40' alt="icons" />
+            </div>
+          ))
+        }
       </div>
     </section> 
   )

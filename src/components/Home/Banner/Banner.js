@@ -50,7 +50,7 @@ const banners = [gadgetSale,kitchenSale,poco,realme,fashionSale,oppo]
       <Slider {...settings}>
   {
     banners.map((el,i)=>(
-      <img src={el} className='sm:h-72 w-full object-cover h-32' alt="banner" key={i}/>
+      <img src={el} className='sm:h-72 w-full object-cover  h-36' alt="banner" key={i}/>
     ))
   }
       

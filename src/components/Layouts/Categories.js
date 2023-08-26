@@ -49,15 +49,15 @@ const Categories = () => {
         }
     ]
   return (
-    <div className='hidden sm:block bg-white  min-w-full px-12 py-1 shadow overflow-hidden'>
+    <div className=' sm:block sm:bg-white  min-w-full sm:px-2 py-0.5 sm:shadow overflow-hidden  mt-28  sm:mt-16 mb-3   '>
       <div className="item-container flex items-center justify-between  ">
         {
             CartNav.map((item,i)=>(
-                <Link key={i} className='flex flex-col items-center gap-1 p-2 group'>
-                    <div className="image h-16 w-16">
-                        <img src={item.icon} className="h-full w-full object-contain" alt={item.name}/>
+                <Link key={i} className='flex flex-col items-center gap-1 sm:p-2 group'>
+                    <div className="image sm:h-16 w-16">
+                        <img src={item.icon} className="sm:h-full h-12 w-full object-contain" alt={item.name}/>
                     </div>
-                    <span className='text-center text-sm font-medium text-gray-500 group-hover:text-primary-blue'>{item.name}</span>
+                    <span className='text-center sm:text-sm text-xs font-medium text-gray-500 group-hover:text-primary-blue'>{item.name}</span>
                 </Link>
             ))
         }
