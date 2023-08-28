@@ -18,4 +18,5 @@ body {
   background-color: #f1f3f6;
   font-family: 'Roboto', sans-serif;
   /* overflow: hidden; */
+  box-sizing: border-box;
 }

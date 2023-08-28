@@ -30,7 +30,8 @@ module.exports = {
         darkBlue: '#172337',
         grey: '#878787',
         sunil:"#fff",
-        plus :"#ffe500"
+        plus :"#ffe500",
+        main:"#f1f3f6"
       },
     },
     spacing: {
