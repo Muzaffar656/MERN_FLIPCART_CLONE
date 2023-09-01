@@ -45,7 +45,7 @@ const Login = async(req,res)=>{
         },
         JWT_KEY
         )
-        res.status(200).json({JWT})
+        res.status(200).json({JWT,user})
     }else{
         res.status(400).json({Error:"Email and Password is not valid"})
     }
