@@ -19,6 +19,7 @@ const Register = async(req,res)=>{
        password: hashedPassword
     })
     const JWT = jwt.sign({user:{
+        id:user._id,
         name:user.name,
         email:user.email,
         password:user.password
@@ -51,5 +52,8 @@ const Login = async(req,res)=>{
     }
 }
 
+const currentUser = async (req,res)=>{
+    res.json(req.user) 
+}
 
-module.exports = {Register , Login}
+module.exports = {Register , Login,currentUser}
