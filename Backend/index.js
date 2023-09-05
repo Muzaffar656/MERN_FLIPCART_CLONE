@@ -22,7 +22,7 @@ api_key: '811992712136645',
 api_secret: 'rpCZ7kD4XR03pXq3xtGvtQBcqRE' 
 });
 app.use('/api/v1',user)
-app.use('/api/v1/',Product)
+app.use('/api/v2/',Product)
 
 
 

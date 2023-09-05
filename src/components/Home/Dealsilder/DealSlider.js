@@ -230,7 +230,7 @@ const settings = {
           {
             Toys.map((el,i)=>(
                 <div key={i} className='text-center flex flex-col items-center gap-5 '>
-                  <img  src={el.icon} alt={el.name} className=' p-4 m-auto max-w-full ' style={{height:"180px"}}   />
+                  <img  src={el.icon} alt={el.name} className=' p-4 m-auto max-w-full max-h-full '    />
 
                   <div className="text-items flex flex-col items-center gap-2 mb-6">
                   <div className=' font-semibold mt-11 text-sm tracking-normal '>{el.name}</div>
@@ -252,3 +252,4 @@ const settings = {
 }
 
 export default DealSlider
+// style={{height:"180px"}}

@@ -1,12 +1,14 @@
 const express = require('express')
-const {createProduct,getAllProducts,getSingleProduct} = require('../Controller/ProductController')
+const {createProduct,getAllProducts,getSingleProduct, getuserproduct} = require('../Controller/ProductController')
 const tokenhandler = require('../Middelwares/TokenHandler')
 const router = express.Router()
 
 router.use(tokenhandler)
+router.get('/',getuserproduct)
 router.post('/createProduct',createProduct)
 router.get('/getallproducts',getAllProducts)
 router.get('/getsingleproduct/:id',getSingleProduct)
+router.get('/userproduct',getuserproduct)
 
 
 module.exports = router

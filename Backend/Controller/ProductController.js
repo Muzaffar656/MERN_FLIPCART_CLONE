@@ -1,7 +1,12 @@
 const cloudinary = require('cloudinary').v2
 const Product = require('../Models/ProductModel')
 
+// get user selected product
 
+const getuserproduct = async(req,res)=>{
+    const product = await Product.find({user_id:req.user.id})
+    res.status(200).json(product)
+}
 
 
 // Create Product API
@@ -51,4 +56,4 @@ const getSingleProduct = async(req,res)=>{
     })
 }
 
-module.exports = {createProduct,getAllProducts,getSingleProduct}
+module.exports = {createProduct,getAllProducts,getSingleProduct,getuserproduct}
