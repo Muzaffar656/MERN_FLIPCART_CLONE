@@ -1,5 +1,7 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
+app.use(cors())
 const dotenv = require('dotenv')
 const bodyParser =require("body-parser")
 dotenv.config()
@@ -10,6 +12,7 @@ ConnectMongo()
 const cloudinary = require('cloudinary')
 const user = require('./Routes/UserRoute')
 const Product = require('./Routes/ProductRoute')
+const errorMiddelware = require('./Middelwares/error')
 app.use(express.json()) 
 app.use(fileUploads({
   useTempFiles:true
@@ -36,3 +39,5 @@ app.get('/',(req,res)=>{
 app.listen(PORT,()=>{
     console.log(`server is running on http://localhost:${PORT}`)
 })
+
+app.use(errorMiddelware)

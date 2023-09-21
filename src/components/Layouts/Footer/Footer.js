@@ -119,7 +119,7 @@ const Footer = () => {
                 {
                   el.links.map((item,e)=>(
                 
-                    <a  href={item.redirect}>{item.name}</a>
+                    <a key={e}  href={item.redirect}>{item.name}</a>
                     
                   ))
                 }

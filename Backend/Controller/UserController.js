@@ -2,15 +2,20 @@ const User  = require('../Models/UserModel')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const JWT_KEY = process.env.JWT_KEY 
-const Register = async(req,res)=>{
+const ErrorHandler = require('../utils/ErrorHandler')
+const Register = async(req,res,next)=>{
 
+    
+
+   try {
     const {name,email,password} = req.body;
     if(!name || !email || !password){
-        res.status(400).json({Error:"All fields are mandatory!"})
+        return next(new ErrorHandler('All fields are mandotry',400))
+
     }
     const UserAlready = await User.findOne({email})
     if(UserAlready){
-        res.status(400).json({Error:"User are Already Registerd!"})
+        return next(new ErrorHandler('User Are Already Exists',400))
     }
     const hashedPassword = await bcrypt.hash(password,10)
     const user = await User.create({
@@ -26,7 +31,14 @@ const Register = async(req,res)=>{
     }},
     JWT_KEY 
     )
-    res.json(JWT)
+    res.json({
+        JWT,
+        message:"Register succesfull",
+        user
+    })
+   } catch (error) {
+    return next(error)
+   }
    
 }
 const Login = async(req,res)=>{

@@ -3,8 +3,10 @@ import {Link} from 'react-router-dom'
 // import logo from '../../../assets/images/logo.png'
 import SearchBar from './SearchBar'
 import '../../../App.css'
-
+import { useSelector } from 'react-redux'
 const Header = () => {
+  const {isAuthintication,user} = useSelector((state)=>state.user)
+  console.log(user)
   return (
  <header className='bg-primary-blue py-2.5 px-3 w-full overflow-hidden  top-0 fixed z-10  '  >
  {/* nav-container */}
@@ -18,13 +20,20 @@ const Header = () => {
    
       <SearchBar/>
     </div>
-
-    <div className=' login-section hidden  sm:flex  sm:items-center ml-3   sm:gap-3  font-sans   '>
+{
+isAuthintication === false ?
+  ( <div className=' login-section hidden  sm:flex  sm:items-center ml-3   sm:gap-3  font-sans   '>
       <Link to="/login" className='sm:bg-white px-2 sm:px-9 text-white py-1 sm:text-primary-blue sm:font-semibold'>Login</Link>
+    </div> ):(
+      <span className=' ml-4 capitalize text-white'>{user.user.name}</span>
+    )
+}
+
+<div className='flex'>
       <Link to="/cart" className='text-white font-semibold ml-4'> Become a Seller </Link>
       <Link to="/more" className=' hidden sm:block text-white font-semibold ml-4 '>More</Link>
-    </div>
-
+  
+</div>
  
   </div>
  </header>

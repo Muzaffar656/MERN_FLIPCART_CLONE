@@ -20,3 +20,9 @@ body {
   /* overflow: hidden; */
   box-sizing: border-box;
 }
+
+.sidebar{
+  background-image: url('https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/login_img_c4a81e.png');
+  background-repeat: no-repeat;
+  background-position: center 85%;
+}
